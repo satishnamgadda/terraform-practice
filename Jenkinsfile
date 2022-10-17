@@ -7,12 +7,12 @@ pipeline {
                     branch: "main"
             }
         }
-        stage('terraform') {
+        stage('terraform init') {
             steps {
                 sh 'terraform init'
             }
         }    
-        stage('terraform') {
+        stage('terraform apply') {
             steps {
                 sh 'terraform apply -auto-approve'
             }   
