@@ -13,7 +13,7 @@ resource "aws_subnet" "main" {
     Name = "subnet1"
   }
    depends_on = [
-    aws_vpc.main
+      aws_subnet.main4
   ]
 }
 resource "aws_subnet" "main1" {
@@ -23,7 +23,7 @@ resource "aws_subnet" "main1" {
     Name = "subnet2"
   }
   depends_on = [
-    aws_subnet.main
+    aws_subnet.main1
   ]
 }
 resource "aws_subnet" "main2" {
@@ -33,7 +33,7 @@ resource "aws_subnet" "main2" {
     Name = "subnet3"
   }
    depends_on = [
-    aws_subnet.main1
+    aws_vpc.main
   ]
 }
 resource "aws_subnet" "main3" {
@@ -53,7 +53,7 @@ resource "aws_subnet" "main4" {
     Name = "subnet5"
   }
    depends_on = [
-    aws_subnet.main3
+    aws_subnet.main5
   ]
 }
 resource "aws_subnet" "main5" {
@@ -63,6 +63,6 @@ resource "aws_subnet" "main5" {
     Name = "subnet6"
   }
    depends_on = [
-    aws_subnet.main4
+    aws_vpc.main
   ]
 }
