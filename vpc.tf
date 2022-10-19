@@ -12,6 +12,9 @@ resource "aws_subnet" "main" {
   tags = {
     Name = "subnet1"
   }
+   depends_on = [
+    aws_vpc.main
+  ]
 }
 resource "aws_subnet" "main1" {
   vpc_id     = aws_vpc.main.id
@@ -19,6 +22,9 @@ resource "aws_subnet" "main1" {
   tags = {
     Name = "subnet2"
   }
+  depends_on = [
+    aws_subnet.main
+  ]
 }
 resource "aws_subnet" "main2" {
   vpc_id     = aws_vpc.main.id
@@ -26,6 +32,9 @@ resource "aws_subnet" "main2" {
   tags = {
     Name = "subnet3"
   }
+   depends_on = [
+    aws_subnet.main1
+  ]
 }
 resource "aws_subnet" "main3" {
   vpc_id     = aws_vpc.main.id
@@ -33,6 +42,9 @@ resource "aws_subnet" "main3" {
   tags = {
     Name = "subnet4"
   }
+   depends_on = [
+    aws_subnet.main2
+  ]
 }
 resource "aws_subnet" "main4" {
   vpc_id     = aws_vpc.main.id
@@ -40,6 +52,9 @@ resource "aws_subnet" "main4" {
   tags = {
     Name = "subnet5"
   }
+   depends_on = [
+    aws_subnet.main3
+  ]
 }
 resource "aws_subnet" "main5" {
   vpc_id     = aws_vpc.main.id
@@ -47,4 +62,7 @@ resource "aws_subnet" "main5" {
   tags = {
     Name = "subnet6"
   }
+   depends_on = [
+    aws_subnet.main4
+  ]
 }
