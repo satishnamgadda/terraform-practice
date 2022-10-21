@@ -1,32 +1,19 @@
-variable "target_region" {
-    type    = string
-    #default = "us-west-2"
-}
-variable "vpc_range" {
+variable "region" {
     type     = string
-    #default  = "10.100.0.0/16"  
+    default  = "us-west-2"
 }
-variable "subnet1_range" {
+variable "vpc_cidr" {
     type      = string
-    #defaulit = "10.10.0.0/24"
+    default   = "10.10.0.0/16"
 }
-variable "subnet2_range" {
-    type      = string
-    #defaulit = "10.10.0.0/24"
+#variable "subnet_cidr" {
+ #   type    = list(string)
+#}
+variable "subnet_name_tags" {
+    type      = list(string)
+  
 }
-variable "subnet3_range" {
-    type      = string
-    #defaulit = "10.10.0.0/24"
-}
-variable "subnet4_range" {
-    type      = string
-    #defaulit = "10.10.0.0/24"
-}
-variable "subnet5_range" {
-    type      = string
-    #defaulit = "10.10.0.0/24"
-}
-variable "subnet6_range" {
-    type      = string
-    #defaulit = "10.10.0.0/24"
+variable "availability-zone" {
+    type     = list(string)
+  
 }

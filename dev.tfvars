@@ -1,8 +1,5 @@
-target_region = "ap-south-1"
-vpc_range     = "10.100.0.0/16"
-subnet1_range  = "10.100.1.0/24"
-subnet2_range  = "10.100.2.0/24"
-subnet3_range  = "10.100.3.0/24"
-subnet4_range  = "10.100.4.0/24"
-subnet5_range  = "10.100.5.0/24"
-subnet6_range  = "10.100.6.0/24"
+region = "ap-south-1"
+vpc_cidr = "10.10.0.0/16"
+#subnet_cidr = [ "10.10.0.0/24","10.10.1.0/24","10.10.2.0/24","10.10.3.0/24","10.10.4.0/24","10.10.5.0/24"]
+subnet_name_tags = [ "web","app","db","web1","app1","db1","mgmt" ]
+availability-zone = [ "ap-south-1a","ap-south-1a","ap-south-1a","ap-south-1b","ap-south-1b","ap-south-1b","ap-south-1a" ]
